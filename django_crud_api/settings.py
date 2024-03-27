@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-fo0nbw9*(p*plwo8h98=u46-8f3gv%vl6(g-ieqbmg%lvnisjr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'django-rest-framework-react-crud-production.up.railway.app']
 
 
 # Application definition
