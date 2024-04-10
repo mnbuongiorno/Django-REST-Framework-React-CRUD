@@ -30,7 +30,8 @@ SECRET_KEY = 'django-insecure-fo0nbw9*(p*plwo8h98=u46-8f3gv%vl6(g-ieqbmg%lvnisjr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'django-rest-framework-react-crud-production.up.railway.app']
+ALLOWED_HOSTS = ['localhost',
+                 'django-rest-framework-react-crud-production.up.railway.app']
 
 
 # Application definition
@@ -84,7 +85,11 @@ WSGI_APPLICATION = 'django_crud_api.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    # 'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
@@ -128,7 +133,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 
 # cors auth
